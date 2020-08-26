@@ -11,6 +11,7 @@ In order to be able to guarantee the correct functioning of the bot, 3 files mus
 
 ### StartGame.json
 This file simulates the 9 clicks it takes to open League of Legends via the icon on the desktop and actively start a round.
+
 ```json
 [
   { "Position": "Icon", "X": 50, "Y": 500, "Pause": 20 },
@@ -20,14 +21,17 @@ This file simulates the 9 clicks it takes to open League of Legends via the icon
   { "Position": "Champion", "X": 10, "Y": 100, "Pause": 800 }
 ]
 ```
+
 To explain what the individual entries mean, let's take a look at the first line: Here the League of Legends icon should be clicked. For this the icon at the beginning of this line. The next two entries X & Y are the coordinates of the icon on the screen. The origin of coordinates is in the upper left corner of monitors. The horizontal axis is X and the vertical axis is Y. If the icon is e.g. vertically in the middle and horizontally on the far right of the screen would be the coordinates X: 1090 and Y: 540 (if you are using a screen with 1920X1080 resolution). At this point you have to enter where your League of Legend icon is on the screen. Last but not least, a value must be entered for pause. This value indicates how many milliseconds the bot should wait after clicking on the coordinates you gave it. So it takes e.g. one to two minutes after clicking the icon, until the launcher starts and the next click has to be performed. You have to adapt that to your system. As soon as you have adjusted all entries in this StartGame.json save the changes.
 
 ### UsedButtons.json
 This file contains the values which keyboard keys should be pressed randomly as long as an active round within League of Legends is running.
+
 ```json
 [0, 1, 2, 3]
 
 ```
+
 | Value | Key |
 | :---: | :---: |
 | 0 | Q |
