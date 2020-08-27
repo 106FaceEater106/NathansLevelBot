@@ -53,5 +53,3 @@ I cordially invite you all to expand and improve this bot with me. Simply fork t
 
 ## Known Issues
 - So far, the bot has only been tested on a system to which only one monitor with a resolution of 1920X1080 is connected. It cannot yet be guaranteed that the bot will work with a multi-monitor system.
-
-- Bot does not start the next round if the first round ends.
