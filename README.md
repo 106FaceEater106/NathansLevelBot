@@ -39,6 +39,7 @@ This file contains the values which keyboard keys should be pressed randomly as 
 | 2 | E |
 | 3 | R |
 | 4 | F1 |
+| 5 | F2 |
 
 Here you can insert all numbers between 1 and 5. However, please pay attention to the formatting of the sample file.
 
