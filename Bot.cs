@@ -11,6 +11,10 @@ namespace NathansLevelBot
             MouseOperations.MouseEvent(MouseOperations.MouseEventFlags.LeftDown);
             Thread.Sleep(10);
             MouseOperations.MouseEvent(MouseOperations.MouseEventFlags.LeftUp);
+
+            if (click.Word != null)
+                KeyOperations.PressKey(click.Word);
+
             Thread.Sleep(click.Pause);
         }
 
@@ -26,6 +30,11 @@ namespace NathansLevelBot
             Thread.Sleep(10);
             MouseOperations.MouseEvent(MouseOperations.MouseEventFlags.LeftUp);
             Thread.Sleep(p);
+        }
+
+        public void HitKey()
+        {
+
         }
     }
 }
