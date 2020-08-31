@@ -24,17 +24,30 @@ namespace NathansLevelBot
             int x = rand.Next(300, 1600);
             int y = rand.Next(200, 800);
             int p = rand.Next(50, 2000);
+            int r = rand.Next(0, 10);
 
+            Click(x, y, p);
+            if (r == 5)
+                UseAbility();
+        }
+
+        public void UseAbility()
+        {
+            int x = 1920 / 2;
+            int y = 1080 / 2;
+            int p = 200;
+
+            Click(x, y, p);
+            KeyOperations.PressCombo();
+        }
+
+        public void Click(int x, int y, int pause)
+        {
             MouseOperations.SetCursorPosition(x, y);
             MouseOperations.MouseEvent(MouseOperations.MouseEventFlags.LeftDown);
             Thread.Sleep(10);
             MouseOperations.MouseEvent(MouseOperations.MouseEventFlags.LeftUp);
-            Thread.Sleep(p);
-        }
-
-        public void HitKey()
-        {
-
+            Thread.Sleep(pause);
         }
     }
 }

@@ -11,6 +11,16 @@ namespace NathansLevelBot
         [DllImport("user32.dll", SetLastError = true)]
         static extern void keybd_event(byte bVk, byte bScan, int dwFlags, int dwExtraInfo);
 
+        public static void PressCombo()
+        {
+            Press(F2);
+            Thread.Sleep(10);
+            Press(W);
+            Thread.Sleep(10);
+            Press(E);
+            Thread.Sleep(10);
+        }
+
         public static void PressKey(string word)
         {
             List<byte> keys = new List<byte>();
