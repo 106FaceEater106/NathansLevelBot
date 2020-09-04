@@ -42,7 +42,7 @@ namespace NathansLevelBot
                 {
                     string json = r.ReadToEnd();
                     List<Click> rawClickEntity = JsonConvert.DeserializeObject<List<Click>>(json);
-                    clicks = rawClickEntity.Select(item => new Click(item.X, item.Y, item.Word, item.Pause)).ToList();
+                    clicks = rawClickEntity.Select(item => new Click(item.X, item.Y, item.Word, item.Pause, item.Name)).ToList();
                 }
                 catch
                 {

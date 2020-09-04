@@ -17,7 +17,7 @@ namespace NathansLevelBot
         /// </summary>
         public void ManagedClick(Click click)
         {
-            Program.PrintInfo($"Executing managed click on X:{click.X}, Y:{click.Y} and wait {click.Pause} milliseconds", Message.Info);
+            Program.PrintInfo($"Executing managed click => Name:{click.Name} X:{click.X}, Y:{click.Y} and wait {click.Pause} milliseconds", Message.Info);
             MouseOperations.SetCursorPosition(click.X, click.Y);
             MouseOperations.MouseEvent(MouseOperations.MouseEventFlags.LeftDown);
             Thread.Sleep(10);
@@ -68,7 +68,7 @@ namespace NathansLevelBot
         /// </summary>
         public void Click(int x, int y, int pause)
         {
-            Program.PrintInfo($"Executing click on X:{x}, Y:{y} and wait {pause} milliseconds", Message.Info);
+            Program.PrintInfo($"Executing click => Name:Random, X:{x}, Y:{y} and wait {pause} milliseconds", Message.Info);
             MouseOperations.SetCursorPosition(x, y);
             MouseOperations.MouseEvent(MouseOperations.MouseEventFlags.LeftDown);
             Thread.Sleep(10);
