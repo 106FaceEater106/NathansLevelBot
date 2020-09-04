@@ -1,4 +1,6 @@
 ![.NET Core](https://github.com/Facing-South/NathansLevelBot/workflows/.NET%20Core/badge.svg)
+![LICENSE](https://img.shields.io/badge/license-GNU3-green)
+![Version](https://img.shields.io/badge/Version-1.0.3-blue)
 
 # Nathan's Level-Bot by Facing-South
 
