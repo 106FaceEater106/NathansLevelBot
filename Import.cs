@@ -6,8 +6,14 @@ using Newtonsoft.Json;
 
 namespace NathansLevelBot
 {
+    /// <summary>
+    /// Import class which converts the StartGame.json, UsedButtons.json and RestartGame.json into C# entities.
+    /// </summary>
     public class Import
     {
+        /// <summary>
+        /// Converts the StartGame.json and RestartGame.json into C# entities and returns a List of them.
+        /// </summary>
         public List<Click> GetClicks(Status status)
         {
             List<Click> clicks = new List<Click>();
@@ -34,6 +40,9 @@ namespace NathansLevelBot
             return clicks;
         }
 
+        /// <summary>
+        /// Converts the UsedButtons.json into C# entities and returns a List of them.
+        /// </summary>
         public List<Button> GetButtons()
         {
             List<Button> buttons = new List<Button>();
@@ -62,6 +71,9 @@ namespace NathansLevelBot
         }
     }
 
+    /// <summary>
+    /// Helper-Type for "GetClicks"-Methode.
+    /// </summary>
     public enum Status
     {
         Initial = 0,

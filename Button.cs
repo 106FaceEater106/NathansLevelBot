@@ -1,5 +1,8 @@
 namespace NathansLevelBot
 {
+    /// <summary>
+    /// Buttons, which the bot does know
+    /// </summary>
     public enum Button
     {
         Q = 0,

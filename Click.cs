@@ -2,6 +2,9 @@ using System;
 
 namespace NathansLevelBot
 {
+    /// <summary>
+    /// Entity of a mouse click
+    /// </summary>
     public class Click
     {
         public int X { get; set; }

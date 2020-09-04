@@ -3,8 +3,17 @@ using System.Threading;
 
 namespace NathansLevelBot
 {
+    /// <summary>
+    /// Main-Class of Nathan's Level-Bot bot where the abilities come together
+    /// </summary>
     public class Bot
     {
+        /// <summary>
+        /// Executes the commands out of the StartGame.json and RestartGame.json
+        /// It simulates a mouse click on a specefic position, write a word or
+        /// letter if necessary and wait the entered time to execute the following
+        /// command out of the json-files.
+        /// </summary>
         public void ManagedClick(Click click)
         {
             MouseOperations.SetCursorPosition(click.X, click.Y);
@@ -18,6 +27,9 @@ namespace NathansLevelBot
             Thread.Sleep(click.Pause);
         }
 
+        /// <summary>
+        /// Simulates a random mouse click on the screen
+        /// </summary>
         public void RandomClick()
         {
             Random rand = new Random();
@@ -31,6 +43,9 @@ namespace NathansLevelBot
                 UseAbility();
         }
 
+        /// <summary>
+        /// Centers the mouse and execute ability (F2, W, E)
+        /// </summary>
         public void UseAbility()
         {
             int x = 1920 / 2;
@@ -41,6 +56,9 @@ namespace NathansLevelBot
             KeyOperations.PressCombo();
         }
 
+        /// <summary>
+        /// Simulates a specefic mouse click on the screen
+        /// </summary>
         public void Click(int x, int y, int pause)
         {
             MouseOperations.SetCursorPosition(x, y);
