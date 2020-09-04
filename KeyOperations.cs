@@ -51,19 +51,6 @@ namespace NathansLevelBot
         static extern void keybd_event(byte bVk, byte bScan, int dwFlags, int dwExtraInfo);
 
         /// <summary>
-        /// Executes a specific sequence of key-presses out of the UsedButtons.json
-        /// </summary>
-        // public static void PressCombo()
-        // {
-        //     Press(F2);
-        //     Thread.Sleep(10);
-        //     Press(W);
-        //     Thread.Sleep(10);
-        //     Press(E);
-        //     Thread.Sleep(10);
-        // }
-
-        /// <summary>
         /// Executes for each letter in the word the key-press
         /// </summary>
         public static void PressKey(string word)
@@ -84,7 +71,20 @@ namespace NathansLevelBot
                 else if (c == 'E' || c == 'e')
                     keys.Add(E);
                 else if (c == 'F' || c == 'f')
-                    keys.Add(F);
+                {
+                    int index = word.IndexOf(c);
+                    int nextIndex = index + 1;
+                    if (Char.IsDigit(word[nextIndex]))
+                    {
+                        int value = Convert.ToInt16(word[nextIndex]);
+                        if (value == 1)
+                            keys.Add(F1);
+                        else if (value == 2)
+                            keys.Add(F2);
+                    }
+                    else
+                        keys.Add(F);
+                }
                 else if (c == 'G' || c == 'g')
                     keys.Add(G);
                 else if (c == 'H' || c == 'h')
@@ -125,6 +125,8 @@ namespace NathansLevelBot
                     keys.Add(Y);
                 else if (c == 'Z' || c == 'z')
                     keys.Add(Z);
+                else
+                    Program.PrintInfo($"Could not find a charackter of {word}", Message.Error);
                 #endregion
             }
 

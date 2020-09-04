@@ -17,6 +17,7 @@ namespace NathansLevelBot
         /// </summary>
         public void ManagedClick(Click click)
         {
+            Program.PrintInfo($"Executing managed click on X:{click.X}, Y:{click.Y} and wait {click.Pause} milliseconds", Message.Info);
             MouseOperations.SetCursorPosition(click.X, click.Y);
             MouseOperations.MouseEvent(MouseOperations.MouseEventFlags.LeftDown);
             Thread.Sleep(10);
@@ -33,10 +34,11 @@ namespace NathansLevelBot
         /// </summary>
         public void RandomBehavior(List<string> buttons)
         {
+            Program.PrintInfo("Generating random coordinates and pause times for a click", Message.Info);
             Random rand = new Random();
             int x = rand.Next(300, 1600);
             int y = rand.Next(200, 800);
-            int p = rand.Next(50, 2000);
+            int p = rand.Next(100, 2000);
             int r = rand.Next(0, 10);
 
             Click(x, y, p);
@@ -49,12 +51,15 @@ namespace NathansLevelBot
         /// </summary>
         public void UseAbility(List<string> buttons)
         {
+            Program.PrintInfo("Center click to prepate keyboard entries", Message.Info);
+
             int x = 1920 / 2;
             int y = 1080 / 2;
             int p = 200;
 
             Click(x, y, p);
 
+            Program.PrintInfo("Pressing keys of \"UsedButtons.Json\"", Message.Info);
             buttons.ForEach(item => KeyOperations.PressKey(item));
         }
 
@@ -63,6 +68,7 @@ namespace NathansLevelBot
         /// </summary>
         public void Click(int x, int y, int pause)
         {
+            Program.PrintInfo($"Executing click on X:{x}, Y:{y} and wait {pause} milliseconds", Message.Info);
             MouseOperations.SetCursorPosition(x, y);
             MouseOperations.MouseEvent(MouseOperations.MouseEventFlags.LeftDown);
             Thread.Sleep(10);

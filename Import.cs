@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using Newtonsoft.Json;
 
 namespace NathansLevelBot
@@ -19,10 +20,21 @@ namespace NathansLevelBot
             List<Click> clicks = new List<Click>();
             string path = string.Empty;
 
-            if (status == Status.Initial)
-                path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Path.Combine("Settings", "StartGame.json"));
-            else if (status == Status.Restart)
-                path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Path.Combine("Settings", "RestartGame.json"));
+            switch (status)
+            {
+                case Status.Initial:
+                    path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Path.Combine("Settings", "StartGame.json"));
+                    Program.PrintInfo($"Path to \"StartGame.json\": {path}", Message.Debug);
+                    break;
+                case Status.Restart:
+                    path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Path.Combine("Settings", "RestartGame.json"));
+                    Program.PrintInfo($"Path to \"RestartGame.json\": {path}", Message.Debug);
+                    break;
+                default:
+                    break;
+            }
+
+            Program.PrintInfo($"Open StreamReader to {path}", Message.Debug);
 
             using (StreamReader r = new StreamReader(path))
             {
@@ -32,11 +44,13 @@ namespace NathansLevelBot
                     List<Click> rawClickEntity = JsonConvert.DeserializeObject<List<Click>>(json);
                     clicks = rawClickEntity.Select(item => new Click(item.X, item.Y, item.Word, item.Pause)).ToList();
                 }
-                catch (System.Exception)
+                catch
                 {
-                    System.Console.WriteLine("Error while reading the Settings.json");
+                    Program.PrintInfo($"Error while reading {path}", Message.Error);
                 }
             }
+
+            Program.PrintInfo($"Close StreamReader to {path}", Message.Debug);
             return clicks;
         }
 
@@ -49,6 +63,10 @@ namespace NathansLevelBot
 
             string buttonsPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Path.Combine("Settings", "UsedButtons.json"));
 
+            Program.PrintInfo($"Path to \"UsedButtons.json\": {buttonsPath}", Message.Debug);
+
+            Program.PrintInfo($"Open StreamReader to {buttonsPath}", Message.Debug);
+
             using (StreamReader r = new StreamReader(buttonsPath))
             {
                 try
@@ -56,12 +74,15 @@ namespace NathansLevelBot
                     string json = r.ReadToEnd();
                     List<string> rawButtonEntity = JsonConvert.DeserializeObject<List<string>>(json);
                     rawButtonEntity.ForEach(item => buttons.Add(item));
+                    buttons.ForEach(item => Program.PrintInfo("Key {item} imported", Message.Debug));
                 }
                 catch (System.Exception)
                 {
-                    System.Console.WriteLine("Error while reading the Settings.json");
+                    Program.PrintInfo($"Error while reading {buttonsPath}", Message.Error);
                 }
             }
+
+            Program.PrintInfo($"Close StreamReader to {buttonsPath}", Message.Debug);
             return buttons;
         }
     }

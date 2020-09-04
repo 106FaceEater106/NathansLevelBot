@@ -1,0 +1,23 @@
+[
+  { "Position": "Icon", "X": 660, "Y": 880, "Word": null, "Pause": 1000 },
+  { "Position": "Play", "X": 320, "Y": 150, "Word": null, "Pause": 1000 },
+  { "Position": "Coop", "X": 380, "Y": 200, "Word": null, "Pause": 1000 },
+  {
+    "Position": "Intermediate",
+    "X": 600,
+    "Y": 570,
+    "Word": null,
+    "Pause": 1000
+  },
+  { "Position": "Confirm", "X": 650, "Y": 680, "Word": null, "Pause": 2000 },
+  { "Position": "FindMatch", "X": 650, "Y": 680, "Word": null, "Pause": 7000 },
+  { "Position": "Accept", "X": 750, "Y": 550, "Word": null, "Pause": 10000 },
+  {
+    "Position": "Champion",
+    "X": 1600,
+    "Y": 100,
+    "Word": "Yuumi",
+    "Pause": 500
+  },
+  { "Position": "Confirm", "X": 750, "Y": 600, "Word": null, "Pause": 10000 }
+]
