@@ -93,14 +93,13 @@ namespace NathansLevelBot
                 FiggleFonts.Slant.Render("Nathan's Level-Bot"));
             Console.WriteLine(
                 FiggleFonts.Slant.Render("by Facing-South"));
-            System.Console.WriteLine("                                  ##### Version 1.0.3 #####");
+            System.Console.WriteLine("                                  ##### Version 1.0.4 #####");
 
             System.Console.WriteLine(Environment.NewLine);
             System.Console.WriteLine(Environment.NewLine);
             Thread.Sleep(2500);
 
         }
-
     }
 
     public enum Message
