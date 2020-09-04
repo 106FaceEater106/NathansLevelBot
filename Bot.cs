@@ -64,7 +64,7 @@ namespace NathansLevelBot
         }
 
         /// <summary>
-        /// Simulates a specefic mouse click on the screen
+        /// Simulates a specific mouse click on the screen
         /// </summary>
         public void Click(int x, int y, int pause)
         {
