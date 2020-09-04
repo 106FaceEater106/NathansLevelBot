@@ -46,7 +46,7 @@ To explain what the individual entries mean, let's take a look at the first line
 
 ### UsedButtons.json
 
-This file contains the values which keyboard keys should be pressed while ingame. The order in which the buttons are pressed is the same as the order in the UsedButtons.json. In the following example the keys F2, W, E are pressed one after the other. The frequency with which this sequence is carried out varies between approx. 5 and 25 seconds.
+This file contains the values which keyboard keys should be pressed while ingame. The order in which the buttons are pressed is the same as the order in the UsedButtons.json. In the following example the keys F2, W, E are pressed one after the other. The frequency with which this sequence is carried out varies between approx. 5 and 25 seconds. It may be useful to know that before the sequence of the keys is pressed, a mouse click is simulated exactly in the middle of the screen so that the focus is correctly set in the current round of League of Legends.
 
 ```json
 ["F2", "W", "E"]
