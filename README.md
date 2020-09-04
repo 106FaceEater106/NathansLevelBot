@@ -60,7 +60,7 @@ This file contains the clicks that the bot should make after a round has ended. 
 
 ## Starting
 
-Once all settings out of the installation-part are done, you dont have to edit them anymore if you wont move your icon on the desktop anymore. If you do it, just fit the correct value inside the koordinates.
+Once all settings out of the installation-part are done, you dont have to edit them anymore if you wont move your icon on the desktop anymore. If you do it, just fit the correct values of the positions inside the StartGame.json or RestartGame.json.
 
 ## Contributions
 
