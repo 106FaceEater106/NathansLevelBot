@@ -30,7 +30,7 @@ namespace NathansLevelBot
         /// <summary>
         /// Simulates a random mouse click on the screen
         /// </summary>
-        public void RandomClick()
+        public void RandomBehavior()
         {
             Random rand = new Random();
             int x = rand.Next(300, 1600);
