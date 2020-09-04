@@ -46,22 +46,13 @@ To explain what the individual entries mean, let's take a look at the first line
 
 ### UsedButtons.json
 
-This file contains the values which keyboard keys should be pressed randomly as long as an active round within League of Legends is running.
+This file contains the values which keyboard keys should be pressed while ingame. The order in which the buttons are pressed is the same as the order in the UsedButtons.json. In the following example the keys F2, W, E are pressed one after the other. The frequency with which this sequence is carried out varies between approx. 5 and 25 seconds.
 
 ```json
-[0, 1, 2, 3, 4, 5]
+["F2", "W", "E"]
 ```
 
-| Value | Key |
-| :---: | :-: |
-|   0   |  Q  |
-|   1   |  W  |
-|   2   |  E  |
-|   3   |  R  |
-|   4   | F1  |
-|   5   | F2  |
-
-Here you can insert all numbers between 1 and 5. However, please pay attention to the formatting of the sample file.
+To influence which keys should be pressed one after the other, the UsedButtons.json can simply be edited. The possible entries are all letters, as well as F1 and F2.
 
 ### RestartGame.json
 

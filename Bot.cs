@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Threading;
 
 namespace NathansLevelBot
@@ -30,7 +31,7 @@ namespace NathansLevelBot
         /// <summary>
         /// Simulates a random mouse click on the screen
         /// </summary>
-        public void RandomBehavior()
+        public void RandomBehavior(List<string> buttons)
         {
             Random rand = new Random();
             int x = rand.Next(300, 1600);
@@ -40,20 +41,21 @@ namespace NathansLevelBot
 
             Click(x, y, p);
             if (r == 5)
-                UseAbility();
+                UseAbility(buttons);
         }
 
         /// <summary>
         /// Centers the mouse and execute ability (F2, W, E)
         /// </summary>
-        public void UseAbility()
+        public void UseAbility(List<string> buttons)
         {
             int x = 1920 / 2;
             int y = 1080 / 2;
             int p = 200;
 
             Click(x, y, p);
-            KeyOperations.PressCombo();
+
+            buttons.ForEach(item => KeyOperations.PressKey(item));
         }
 
         /// <summary>

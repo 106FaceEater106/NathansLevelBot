@@ -24,7 +24,7 @@ namespace NathansLevelBot
             List<Click> initialClicks = import.GetClicks(Status.Initial);
 
             // Get a list of all buttons-commands for the game
-            List<Button> usedButtons = import.GetButtons();
+            List<string> usedButtons = import.GetButtons();
 
             // Get a list of all commands for the restart of a game
             List<Click> restartClicks = import.GetClicks(Status.Restart);
@@ -34,7 +34,7 @@ namespace NathansLevelBot
 
             // Execute random behavior in the game
             while (true)
-                bot.RandomBehavior();
+                bot.RandomBehavior(usedButtons);
         }
     }
 }

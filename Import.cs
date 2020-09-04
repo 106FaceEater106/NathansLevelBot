@@ -43,9 +43,9 @@ namespace NathansLevelBot
         /// <summary>
         /// Converts the UsedButtons.json into C# entities and returns a List of them.
         /// </summary>
-        public List<Button> GetButtons()
+        public List<string> GetButtons()
         {
-            List<Button> buttons = new List<Button>();
+            List<string> buttons = new List<string>();
 
             string buttonsPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, Path.Combine("Settings", "UsedButtons.json"));
 
@@ -54,13 +54,8 @@ namespace NathansLevelBot
                 try
                 {
                     string json = r.ReadToEnd();
-                    List<int> rawButtonEntity = JsonConvert.DeserializeObject<List<int>>(json);
-
-                    foreach (var item in rawButtonEntity)
-                    {
-                        Button button = (Button)item;
-                        buttons.Add(button);
-                    }
+                    List<string> rawButtonEntity = JsonConvert.DeserializeObject<List<string>>(json);
+                    rawButtonEntity.ForEach(item => buttons.Add(item));
                 }
                 catch (System.Exception)
                 {

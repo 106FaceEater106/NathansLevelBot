@@ -53,15 +53,15 @@ namespace NathansLevelBot
         /// <summary>
         /// Executes a specific sequence of key-presses out of the UsedButtons.json
         /// </summary>
-        public static void PressCombo()
-        {
-            Press(F2);
-            Thread.Sleep(10);
-            Press(W);
-            Thread.Sleep(10);
-            Press(E);
-            Thread.Sleep(10);
-        }
+        // public static void PressCombo()
+        // {
+        //     Press(F2);
+        //     Thread.Sleep(10);
+        //     Press(W);
+        //     Thread.Sleep(10);
+        //     Press(E);
+        //     Thread.Sleep(10);
+        // }
 
         /// <summary>
         /// Executes for each letter in the word the key-press
