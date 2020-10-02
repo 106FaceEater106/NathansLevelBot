@@ -5,7 +5,7 @@
 # Nathan's Level-Bot by Facing-South
 
 <p align="center">
-  <img src="https://www.facing-south.com/img/NathansLevelBot.PNG" width="80%">
+  <img src="http://www.facing-south.com/img/NathansLevelBot.PNG" width="80%">
 </p>
 
 This bot opens League of Legends and starts a match of your choice with a charackter of your choice without you having to do anything. He will moves the champion randomly across the map and executes abilities of your choice within a random time, so that you can gain experience and level up without having to play yourself. When a round is over, it automatically starts the next round. This process repeats itself until you turn off the bot.
